@@ -1,0 +1,5 @@
+/**
+ * taskConstants.js
+ */
+
+module.exports = {};

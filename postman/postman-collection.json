@@ -1,0 +1,984 @@
+{
+  "info": {
+    "name": "test_s_application",
+    "_postman_id": "4a738efc-3bd9-4ef1-a0f9-9d76a01b7ed0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "client",
+      "description": "client APIs",
+      "item": [
+        {
+          "name": "user",
+          "description": "user Model APIs",
+          "item": [
+            {
+              "name": "getuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/:id",
+                "method": "GET",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "getuser_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"userType\": 1,\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n    \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "get loggedin User",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/me",
+                "method": "GET",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "loggedInUserInfo_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/me"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"userType\": 1,\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n    \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "adduser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/create",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"Margarett1\",\n  \"password\": \"Da3IbbGu8FOFzzL\",\n  \"email\": \"Nathaniel70@yahoo.com\",\n  \"name\": \"Sherry Yost\",\n  \"userType\": 1,\n  \"mobileNo\": \"(425) 421-7032\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "adduser_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"userType\": 1,\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 1,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n    \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlluser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/list",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"page\": 1,\n    \"paginate\": 2\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "findAlluser_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"username\": \"Margarett1\",\n        \"email\": \"Nathaniel70@yahoo.com\",\n        \"name\": \"Sherry Yost\",\n        \"userType\": 1,\n        \"mobileNo\": \"(425) 421-7032\",\n        \"id\": 101,\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n        \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n      }\n    ],\n    \"paginator\": {\n      \"currentPage\": 1,\n      \"itemCount\": 1,\n      \"pageCount\": 1,\n      \"perPage\": 25\n    }\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getuserCount",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/count",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "getuserCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/addBulk",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"username\": \"Margarett1\",\n      \"password\": \"Da3IbbGu8FOFzzL\",\n      \"email\": \"Nathaniel70@yahoo.com\",\n      \"name\": \"Sherry Yost\",\n      \"userType\": 1,\n      \"mobileNo\": \"(425) 421-7032\"\n    }\n  ]\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "adduser_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManyuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/deleteMany",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "deleteManyuser_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManyuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/softDeleteMany",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "softDeleteManyuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 1\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/updateBulk",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "updateBulkuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/softDelete/:id",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "softDeleteuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"userType\": 1,\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n    \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdateuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/partial-update/:id",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "partialupdateuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"username\": \"Margarett1\",\n      \"email\": \"Nathaniel70@yahoo.com\",\n      \"name\": \"Sherry Yost\",\n      \"userType\": 1,\n      \"mobileNo\": \"(425) 421-7032\",\n      \"id\": 1,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n      \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/update/:id",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"Margarett1\",\n  \"password\": \"Da3IbbGu8FOFzzL\",\n  \"email\": \"Nathaniel70@yahoo.com\",\n  \"name\": \"Sherry Yost\",\n  \"userType\": 1,\n  \"mobileNo\": \"(425) 421-7032\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "updateuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"username\": \"Margarett1\",\n      \"email\": \"Nathaniel70@yahoo.com\",\n      \"name\": \"Sherry Yost\",\n      \"userType\": 1,\n      \"mobileNo\": \"(425) 421-7032\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n      \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateProfile",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/update-profile",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"Margarett1\",\n  \"password\": \"Da3IbbGu8FOFzzL\",\n  \"email\": \"Nathaniel70@yahoo.com\",\n  \"name\": \"Sherry Yost\",\n  \"userType\": 1,\n  \"mobileNo\": \"(425) 421-7032\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "updateProfileuser_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/update-profile"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"username\": \"Margarett1\",\n      \"email\": \"Nathaniel70@yahoo.com\",\n      \"name\": \"Sherry Yost\",\n      \"userType\": 1,\n      \"mobileNo\": \"(425) 421-7032\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n      \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteuser",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/delete/:id",
+                "method": "DELETE",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "deleteuser_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"username\": \"Margarett1\",\n      \"email\": \"Nathaniel70@yahoo.com\",\n      \"name\": \"Sherry Yost\",\n      \"userType\": 1,\n      \"mobileNo\": \"(425) 421-7032\",\n      \"id\": 101,\n      \"isDeleted\": false,\n      \"isActive\": true,\n      \"createdAt\": \"2023-01-30T14:26:45.117Z\",\n      \"updatedAt\": \"2023-01-20T14:36:56.646Z\"\n    }\n  ]\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "client Login",
+          "item": [
+            {
+              "name": "Login in client",
+              "request": {
+                "url": "{{url}}/client/auth/login",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"username\",\n  \"password\": \"password\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Login in client_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/auth/login"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 101,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2022-09-04T03:11:41.928Z\",\n    \"updatedAt\": \"2022-11-01T00:01:50.961Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Register User in client",
+              "request": {
+                "url": "{{url}}/client/auth/register",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"Margarett1\",\n  \"password\": \"Da3IbbGu8FOFzzL\",\n  \"email\": \"Nathaniel70@yahoo.com\",\n  \"name\": \"Sherry Yost\",\n  \"mobileNo\": \"(425) 421-7032\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Register User in client_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/auth/register"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Margarett1\",\n    \"email\": \"Nathaniel70@yahoo.com\",\n    \"name\": \"Sherry Yost\",\n    \"mobileNo\": \"(425) 421-7032\",\n    \"id\": 101,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2022-09-04T03:11:41.928Z\",\n    \"updatedAt\": \"2022-11-01T00:01:50.961Z\"\n  }\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Forgot Password in client",
+              "request": {
+                "url": "{{url}}/client/auth/forgot-password",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"yourmail@gmail.com\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Forgot Password in client_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/auth/forgot-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"otp successfully send to your email.\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Validate OTP in client",
+              "request": {
+                "url": "{{url}}/client/auth/validate-otp",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"otp\": \"5898\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Validate OTP in client_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/auth/validate-otp"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Invalid OTP\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Logout in client",
+              "request": {
+                "url": "{{url}}/client/auth/logout",
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": ""
+              },
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Change Password in client",
+              "request": {
+                "url": "{{url}}/client/api/v1/user/change-password",
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"OldPassword\",\n  \"newPassword\": \"NewPassword\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Change Password in client_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/user/change-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Password changed successfully\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Reset password in client",
+              "request": {
+                "url": "{{url}}/client/auth/reset-password",
+                "method": "PUT",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"5898\",\n  \"newPassword\": \"yourPassword\"\n}"
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "Reset password in client_response~",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/auth/reset-password"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Password reset successfully\",\n  \"data\": {}\n}",
+                  "header": [],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "File Upload",
+          "description": "Upload Files",
+          "item": [
+            {
+              "name": "File upload in client",
+              "request": {
+                "url": "{{url}}/client/api/v1/upload",
+                "method": "POST",
+                "auth": {},
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file[]",
+                      "type": "file",
+                      "description": "Select file to upload"
+                    },
+                    {
+                      "key": "file[]",
+                      "type": "file",
+                      "disabled": true,
+                      "description": "Select Another file to upload multiple files"
+                    },
+                    {
+                      "key": "folder",
+                      "value": "Enter foldername",
+                      "type": "text",
+                      "disabled": true,
+                      "description": "Optional, enable to upload file to specific folder"
+                    },
+                    {
+                      "key": "fileName",
+                      "value": "Enter fileName",
+                      "type": "text",
+                      "disabled": true,
+                      "description": "Optional, enable to give Specific file name to uploaded File"
+                    }
+                  ]
+                },
+                "description": ""
+              },
+              "response": [
+                {
+                  "name": "File upload in client",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/client/api/v1/upload"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": [\n    {\n      \"status\": true,\n      \"path\": \"path to download file\"\n    }\n  ]\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
